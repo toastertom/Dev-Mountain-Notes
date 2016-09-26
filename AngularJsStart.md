@@ -28,3 +28,10 @@ Or
 ```
 angular.module('myApp').service('services', function () {});
 ```
+Lastly we need to connect our angular files to our HTML page.
+
+Start by:
+```
+<html ng-app="myApp">
+```
+***ng-app*** is known as a ***"Directive"***. It tells AngularJs that the myApp "Module" lives within the HTML's "Scope."
