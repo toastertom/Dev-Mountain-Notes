@@ -1,6 +1,6 @@
 ### AngularJs Linking Pages
 
-First create your ***app.js*** folder. Then place the following code:
+First create the  ***app.js*** "Module". A module contains the different components of an AngularJS app. Then place the following code:
 
 ```
 var app = angular.module("myApp", []);
@@ -10,7 +10,7 @@ Or just
 angular.module('myApp', [])
 ```
 
-Then create your ***controller.js*** file, and put the following code:
+Then create your ***controller.js*** file, a controller manages the app's data. Insert the following code:
 
 ```
 app.controller('MainController', ['$scope', function($scope){ }]);
@@ -35,3 +35,10 @@ Start by:
 <html ng-app="myApp">
 ```
 ***ng-app*** is known as a ***"Directive"***. It tells AngularJs that the myApp "Module" lives within the HTML's "Scope."
+
+Just like we did with the HTML Tag we are going to put ng-controller  in the Body Tag:
+
+```
+<body ng-controller="MainController">
+```
+ng-controller is a "Directive" that defines the controller scope. In this case it would be anything within the Body Tags.
