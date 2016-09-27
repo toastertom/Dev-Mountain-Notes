@@ -45,4 +45,5 @@ Start by:
 <body ng-controller="MainController">
 ```
 ng-controller is a "Directive" that defines the controller scope. In this case it would be anything within the Body Tags.
+
 ---
