@@ -10,10 +10,15 @@ A ***"promise"*** represents the eventual result of an asynchronous operation. I
 angular.module('app').service('service1',function($q){
 
   this.getUnicorn = function (){
+
+  //Step 1: Make the deferrer
     var deferrer = $q.defer();
 
+  //Step 3: Resolve or Reject the promise
     deferrer.resolve('Sparkly Unicorn');
+    deferrer.reject('Unicorns do not exist');
 
+  //Step 2: Return the promise
     return deferrer.promise;
   }
 
