@@ -24,3 +24,17 @@ angular.module('app').service('service1',function($q){
 
   });
 ```
+```
+// Access the promise on the controller
+
+angular.module('app').controller('controller', function($scope, service1){
+
+  $scope.my6yearOldWantsAUnicorn = function() {
+    var aPromise = service1.getUnicorn();
+    aPromise.then(function(whateverDollaQResolved){
+      $scope.theThingWeAskedFor = whateverDollaQResolved;
+      })
+  }
+
+  });
+```
