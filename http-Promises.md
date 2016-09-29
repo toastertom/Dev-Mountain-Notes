@@ -29,6 +29,8 @@ angular.module('app').service('service1',function($q){
 
 angular.module('app').controller('controller', function($scope, service1){
 
+  $scope.theThingWeAskedFor = "Asking for the thing...";
+
   $scope.my6yearOldWantsAUnicorn = function() {
     var aPromise = service1.getUnicorn();
     aPromise.then(function(whateverDollaQResolved){
@@ -36,5 +38,16 @@ angular.module('app').controller('controller', function($scope, service1){
       })
   }
 
+  $scope.my6yearOldWantsAUnicorn();
+
   });
+```
+```
+<!-- Connnect to your HTML -->
+
+<p>
+{{theThingWeAskedFor}}
+</p>
+
+<!-- Result will display "Asking for the thing..." until the Promise is received from server, then will display "Sparkly Unicorn" or "Unicorns do not exist" -->
 ```
