@@ -92,7 +92,8 @@ angular.model('uiRoutDemo', ['ui.router'])
 <h3>You are home</h3>
 ```
 ---
-***home-controller.js***
+
+***app.js***
 * Another thing that we can do is add specific controllers to each page. See below.
 ```
 angular.model('uiRoutDemo', ['ui.router'])
@@ -113,5 +114,34 @@ angular.model('uiRoutDemo', ['ui.router'])
     controller: 'profile-controller.js'
     })
   });
+```
+---
+
+***home-controller.js***
+* So our $state that is "home" is now attached to this controller.
+```
+angular.module('uiRoutDemo')
+
+.controller('home-controller', function($scope, service ,$state){
+
+  $scope.linkList = [
+      'profile',
+      'friends',
+      'hobbies'
+  ];
+
+  });
+```
+---
+
+***home-tmpl.html***
+* Where the template is attached to the controller we can now use the power of angular on a this template. We will have different controllers for different templates.... normally.
+```
+<h3>You are home</h3>
+<ul>
+  <li ng-repeat="link in linkList">
+    {{link}}
+  </li>
+</ul>
 ```
 ---
