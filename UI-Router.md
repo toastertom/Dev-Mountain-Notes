@@ -3,7 +3,7 @@
 ##Setup
 
 ###Step1
-***HTML***
+***index.html***
 * Top of the Document (Same old stuff).
 ```
 <!DOCTYPE html>
@@ -31,7 +31,7 @@ angular.model('uiRoutDemo', ['ui.router'])
 ```
 ---
 ###Step 3 (Last Step)
-***HTML***
+***index.html***
 * Next you need to setup the point you want your content to be swapped out. Note do not put anything in the ui-view because it will be swapped out with other content.
 ```
 <ui-view>
@@ -84,3 +84,34 @@ angular.model('uiRoutDemo', ['ui.router'])
     })
   });
 ```
+---
+
+***home-tmpl.html***
+* Now under the home template you can just code. Note you don't need to do all the head and script linking stuff because technically this code is being inserted into the original index.html doc's body that already has all that.
+```
+<h3>You are home</h3>
+```
+---
+***home-controller.js***
+* Another thing that we can do is add specific controllers to each page. See below.
+```
+angular.model('uiRoutDemo', ['ui.router'])
+
+.config(function($urlRouterProvider, $stateProvider){
+
+  $stateProvider.state('home', {
+
+    templateUrl: 'home-tmpl.html',
+    url: '/home',
+    controller: 'home-controller.js'
+    })
+
+  $stateProvider.state('profile', {
+
+    templateUrl: 'profile-tmpl.html',
+    url: '/profile',
+    controller: 'profile-controller.js'
+    })
+  });
+```
+---
