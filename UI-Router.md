@@ -1,4 +1,6 @@
-# UI-Router Setup
+# UI-Router
+
+##Setup
 
 ###Step1
 ***HTML***
@@ -19,8 +21,16 @@
 ```
 angular.model('uiRoutDemo', ['ui.router'])
 ```
+* Then you will you will use .config which will be used to configure what you want. 
+```
+angular.model('uiRoutDemo', ['ui.router'])
+
+.config(function($urlRouterProvider, $stateProvider){
+
+  });
+```
 ---
-###Step 3
+###Step 3 (Last Step)
 ***HTML***
 * Next you need to setup the point you want your content to be swapped out. Note do not put anything in the ui-view because it will be swapped out with other content.
 ```
