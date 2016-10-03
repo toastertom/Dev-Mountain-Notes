@@ -21,7 +21,7 @@
 ```
 angular.model('uiRoutDemo', ['ui.router'])
 ```
-* Then you will you will use .config which will be used to configure what you want. 
+* Then you will you will use .config which will be used to configure what you want.
 ```
 angular.model('uiRoutDemo', ['ui.router'])
 
@@ -37,5 +37,29 @@ angular.model('uiRoutDemo', ['ui.router'])
 <ui-view>
   <!-- Do not put anything here, it will be replaced. -->
 </ui-view>
+```
+---
+
+## Using UI-Router
+
+***app.js***
+* follow the template below to build a simple template. Note "state" means more like status. What is the status of eg. home , profile , friendsList.
+```
+angular.model('uiRoutDemo', ['ui.router'])
+
+.config(function($urlRouterProvider, $stateProvider){
+
+  $stateProvider.state('home', {
+
+    template: '<h3>You Are Home</h3>',
+    url: '/home'
+    })
+
+  $stateProvider.state('profile', {
+
+    template: '<h3>You Are Home</h3>',
+    url: '/profile'
+    })
+  });
 ```
 ---
