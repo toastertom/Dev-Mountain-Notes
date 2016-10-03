@@ -57,9 +57,30 @@ angular.model('uiRoutDemo', ['ui.router'])
 
   $stateProvider.state('profile', {
 
-    template: '<h3>You Are Home</h3>',
+    template: '<h3>Your Profile Page</h3>',
     url: '/profile'
     })
   });
 ```
 ---
+
+***app.js***
+* We don't actually want to build templates in our app.js file. Instead have "template:" be "templateUrl:" with a link to a separate html file.
+```
+angular.model('uiRoutDemo', ['ui.router'])
+
+.config(function($urlRouterProvider, $stateProvider){
+
+  $stateProvider.state('home', {
+
+    templateUrl: 'home-tmpl.html',
+    url: '/home'
+    })
+
+  $stateProvider.state('profile', {
+
+    templateUrl: 'profile-tmpl.html',
+    url: '/profile'
+    })
+  });
+```
